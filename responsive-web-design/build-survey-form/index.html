@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Survey Form Project</title>
+  <meta lang="utf-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Give us your feedback!</p>
+  <main>
+    <form id="survey-form" action="">
+      <div>
+        <label id="name-label" for="name">Name</label>
+        <input id="name" type="text" required placeholder="Your name">
+      </div>
+      <div>
+        <label id="email-label" for="email">Email</label>
+        <input id="email" type="email" required placeholder="Your email">
+      </div>
+      <div>
+        <label id="number-label" for="number">Number</label>
+        <input id="number" type="number" min="1" max="5" placeholder="Number">
+      </div>
+      <div>
+        <label for="dropdown">Select an Option</label>
+        <select id="dropdown">
+          <option value="option-1">Option 1</option>
+          <option value="option-2">Option 2</option>
+          <option value="option-3">Option 3</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Choose 1 Option</legend>
+        <input value="radio-1" id="radio-1" type="radio" name="radios"> <label for="radio-1">Radio 1</label>
+        <input value="radio-2" id="radio-2" type="radio" name="radios"> <label for="radio-2">Radio 2</label>
+        <input value="radio-3" id="radio-3" type="radio" name="radios"> <label for="radio-3">Radio 3</label>
+      </fieldset>
+      <fieldset>
+        <legend>Choose at least 0 Options</legend>
+        <input value="checkbox-1" id="checkbox-1" type="checkbox" name="checkboxes"> <label for="checkbox-1">Checkbox 1</label>
+        <input value="checkbox-2" id="checkbox-2" type="checkbox" name="checkboxes"> <label for="checkbox-2">Checkbox 2</label>
+        <input value="checkbox-3" id="checkbox-3" type="checkbox" name="checkboxes"> <label for="checkbox-3">Checkbox 3</label>
+      </fieldset>
+      <div>
+        <label id="comments-label" for="comments">Additional Comments</label>
+        <textarea id="comments"></textarea>
+      </div>
+      <button id="submit" type="submit">Submit Feedback</button>
+    </form>
+  </main>
+</body>
+</html>

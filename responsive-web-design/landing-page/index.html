@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Marketing Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header id="header">
+    <img id="header-img"
+      src="https://assets-global.website-files.com/643b17934cc08281588d499f/64a6fc73a86fde4a7e15c57f_Nav%20Logo%20BW.svg"
+      alt="Logo">
+    <nav id="nav-bar">
+      <ul>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="intro">
+      <h1>Vernonian Digital</h1>
+      <p>Your web design and development studio</p>
+      <video id="video" controls=true src="https://laser-burst-1992.the.com/__PUBLIC_LIGHT/assets/8CJkf-Michael-Gugger-woman-coding-on-laptop-225799-filmsupply-(1).mp4"></video>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <ul class="service-grid">
+        <li class="service-item">
+          <h3>Design Systems</h3>
+          <p>We create bespoke design systems for your brand.</p>
+        </li>
+        <li class="service-item">
+          <h3>Web Design</h3>
+          <p>We design custom layouts for any type of website.</p>
+        </li>
+        <li class="service-item">
+          <h3>Web Development</h3>
+          <p>We tranform ideas into interactive websites.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>We're a digital studio with a focus on crafting frictionless experiences & telling impactful stories.</p>
+      <p>Our expertise lies in the digital services we provide.</p>
+      <p>With over half a decade experience in creative technology and design, our team is familiar with collaborating with startups, small business, and full-service marketing agencies.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Interested in working together? Send us a quick intro using the form below.</p>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <div class="input-wrap">
+          <label for="name">What's your name?</label>
+          <input id="name" type="text" placeholder="Your Name" name="name" required>
+        </div>
+
+        <div class="input-wrap">
+          <label for="email">What's your email?</label>
+          <input id="email" type="email" placeholder="your@email.com" name="email" required>
+        </div>
+
+        <div class="input-wrap">
+          <label for="message">Why are you contacting us?</label>
+          <textarea placeholder="I want to..." name="message"></textarea>
+        </div>
+
+        <input type="submit" id="submit" value="Submit" />
+      </form>
+    </section>
+
+  </main>
+  <footer>
+    <nav id="footer-nav">
+      <p>Made by <a class="foot-link" href="https://vernonian.com">Vernonian Digital</a></p>
+    </nav>
+  </footer>
+</body>
+
+</html>

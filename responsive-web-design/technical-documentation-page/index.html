@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Technical Documentation Project</title>
+  <!-- Based on https://react.dev/learn -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header><h2>React Quick Doc</h2></header>
+    <ol>
+      <li><a href="#overview" class="nav-link">Overview</a></li>
+      <li><a href="#creating_and_nesting_components" class="nav-link">Creating and nesting components</a></li>
+      <li><a href="#writing_markup_with_jsx" class="nav-link">Writing markup with JSX</a></li>
+      <li><a href="#adding_styles" class="nav-link">Adding styles</a></li>
+      <li><a href="#displaying_data" class="nav-link">Displaying data</a></li>
+      <li><a href="#conditional_rendering" class="nav-link">Conditional rendering</a></li>
+    </ol>
+  </nav>
+  <main id="main-doc">
+    <h1>Quick React Reference</h1>
+
+    <!-- Section 1 -->
+    <section id="overview" class="main-section">
+      <header><h2>Overview</h2></header>
+      <p>
+        Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you
+        will use on a daily basis.
+      </p>
+      <h3>You will learn</h3>
+      <ul>
+        <li>How to create and nest components</li>
+        <li>How to add markup and styles</li>
+        <li>How to display data</li>
+        <li>How to render conditions and lists</li>
+        <li>How to respond to events and update the screen</li>
+        <li>How to share data between components</li>
+      </ul>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="creating_and_nesting_components" class="main-section">
+      <header><h2>Creating and nesting components</h2></header>
+      <p>React apps are made out of <em>components</em>. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.</p>
+      <p>React components are JavaScript functions that return markup:</p>
+      <code class="code-block">
+
+<pre>function MyButton() {
+  return (
+    &lt;button&gt;I'm a button&lt;/button&gt;
+  );
+}</pre>
+      </code>
+      <p>Now that you've declared <code class="code-inline">MyButton</code>, you can nest it into another component:</p>
+      <code class="code-block">
+
+<pre>export default function MyApp() {
+  return (
+    &lt;div&gt;
+      &lt;h1>Welcome to my app&lt;/h1&gt;
+      &lt;MyButton /&gt;
+    &lt;/div&gt;
+  );
+}</pre>
+
+      </code>
+      <p>Notice that <code>&lt;MyButton /&gt;</code> starts with a capital letter. That’s how you know it’s a React component. React component names must always start with a capital letter, while HTML tags must be lowercase.</p>
+      <p>Have a look at the result:</p>
+      <code class="code-block">
+        
+<pre>function MyButton() {
+  return (
+    &lt;button&gt;
+      I'm a button
+    &lt;/button&gt;
+  );
+}
+
+export default function MyApp() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Welcome to my app&lt;/h1&gt;
+      &lt;MyButton /&gt;
+    &lt;/div&gt;
+  );
+}</pre>
+      </code>
+      <p>The export default keywords specify the main component in the file. If you’re not familiar with some piece of JavaScript syntax, MDN and javascript.info have great references.</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="writing_markup_with_jsx" class="main-section">
+      <header><h2>Writing markup with JSX</h2></header>
+      <p>The markup syntax you've seen above is called JSX. It is optional, but most React projects use JSX for its convenience. All of the tools we recommend for local development support JSX out of the box.</p>
+      <p>JSX is stricter than HTML. You have to close tags like <code class="code-inline"><br /></code>. Your component also can't return multiple JSX tags. You have to wrap them into a shared parent, like a <code class="code-inline"">&lt;div&gt;...&lt;/div&gt;</code> or an empty <code class="code-inline">&lt;&gt;...&lt;/&gt;</code> wrapper:</p>
+      <code class="code-block">
+
+<pre>function AboutPage() {
+  return (
+    &lt;&gt;
+      &lt;h1&gt;About&lt;/h1&gt;
+      &lt;p&gt;Hello there.&lt;br /&gt;How do you do?&lt;/p&gt;
+      &lt;/&gt;
+  );
+}</pre>
+      </code>
+      
+      <p></p>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="adding_styles" class="main-section">
+      <header><h2>Adding styles</h2></header>
+      <p>In React, you specify a CSS class with <code>className</code>. It works the same way as the HTML <code>class</code> attribute:</p>
+      <code class="code-block">
+<pre>&lt;img className="avatar" /&gt;</pre>
+      </code>
+      <p>Then you write the CSS rules for it in a separate CSS file:</p>
+      <code class="code-block">
+<pre>/* In your CSS */
+.avatar {
+  border-radius: 50%;
+}</pre>
+      </code>
+      
+      <p>React does not prescribe how you add CSS files. In the simplest case, you’ll add a <code>&lt;link&gt;</code> tag to your HTML. If you use a build tool or a framework, consult its documentation to learn how to add a CSS file to your project.</p>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="displaying_data" class="main-section">
+      <header><h2>Displaying data</h2></header>
+      <p>JSX lets you put markup into JavaScript. Curly braces let you “escape back” into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display <code>user.name</code>:</p>
+      <code class="code-block">
+<pre>/* In your CSS */
+.avatar {
+  border-radius: 50%;
+}</pre>
+      </code>
+      <p>You can also “escape into JavaScript” from JSX attributes, but you have to use curly braces instead of quotes. For example, <code>className="avatar"</code> passes the "avatar" string as the CSS class, but <code>src={user.imageUrl}</code> reads the JavaScript user.imageUrl variable value, and then passes that value as the <code>src</code> attribute:</p>
+      <code class="code-block">
+<pre>return (
+  &lt;img
+    className="avatar"
+    src={user.imageUrl}
+  /&gt;
+);</pre>
+      </code>
+      <p>You can put more complex expressions inside the JSX curly braces too, for example, string concatenation.</p>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="conditional_rendering" class="main-section">
+      <header><h2>Conditional rendering</h2></header>
+      <p>In React, there is no special syntax for writing conditions. Instead, you’ll use the same techniques as you use when writing regular JavaScript code. For example, you can use an <code>if</code> statement to conditionally include JSX:</p>
+      <code class="code-block">
+<pre>let content;
+  if (isLoggedIn) {
+    content = &lt;AdminPanel /&gt;;
+  } else {
+    content = &lt;LoginForm /&gt;;
+  }
+  return (
+    &lt;div&gt;
+      {content}
+    &lt;/div&gt;
+  );</pre>
+      </code>
+      <p>If you prefer more compact code, you can use the conditional <code>?</code> operator. Unlike <code>if</code>, it works inside JSX:</p>
+    <code class="code-block">
+<pre>&lt;div&gt;
+  {isLoggedIn ? (
+    &lt;AdminPanel /&gt;
+  ) : (
+    &lt;LoginForm /&gt;
+  )}
+&lt;/div&gt;</pre>
+    </code>
+    <p>When you don’t need the <code>else</code> branch, you can also use a shorter logical <code>&&</code> syntax:</p>
+    <code class="code-block">
+<pre>&lt;div&gt;
+  {isLoggedIn && &lt;AdminPanel /&gt;}
+  &lt;/div&gt;</pre>
+          </code>
+    <p>All of these approaches also work for conditionally specifying attributes. If you’re unfamiliar with some of this JavaScript syntax, you can start by always using <code>if...else</code>.</p>
+    </section>
+  </main>
+</body>
+
+</html>

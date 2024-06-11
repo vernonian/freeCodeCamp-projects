@@ -1,0 +1,258 @@
+
+/* Reset */
+* {box-sizing: border-box;}
+
+h1, h2, h3, p {
+  margin: 0px;
+}
+
+ul, ol {
+  padding: 0px;
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+#navbar {
+  padding: var(--m);
+  background-color: var(--primary-0);
+  color: var(--primary-3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#navbar:hover {
+  background-color: var(--primary-1);
+  color: (--primary-6);
+}
+
+#navbar:hover .nav-link {
+  color: var(--primary-5);
+}
+
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  max-width: var(--maxwidth-m);
+}
+
+#navbar .nav-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+#navbar .nav-link:hover {
+  color: var(--primary-6);
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--l) var(--m);
+}
+
+#welcome-section {
+  background-color: var(--primary-5);
+  color: var(--white);
+}
+
+#welcome-section p {
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+}
+
+/* Projects */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--m);
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+@media screen and (min-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-tile {
+  height: 100%;
+}
+
+.project-tile a {
+  padding: var(--m);
+  border: solid 1px var(--primary-5);
+  background-color: var(--primary-0);
+  color: inherit;
+  border-radius: var(--s);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.project-tile a:hover {
+  background-color: var(--primary-1);
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--primary-5);
+  color: white;
+  padding: var(--m);
+}
+
+footer a {
+  color: inherit;
+}
+
+
+
+/* Vars & Styles */
+:root {
+
+    /* Black & White */
+    --black: #1e1e1e;
+    --white: #ffffff;
+  
+    /* Primary */
+    --primary-0: #fff4e9;
+    --primary-1: #ffead2;
+    --primary-2: #ffd4a6;
+    --primary-3: #ffbf79;
+    --primary-4: #ffa94d;
+    --primary-5: #FF9420;
+    --primary-6: #cc761a;
+    --primary-7: #995913;
+    --primary-8: #663b0d;
+    --primary-9: #331e06;
+
+  /* Spacing Units */
+
+  /* Primitives used for spacing properties like gap, margin, padding, etc. */
+  --xxl: max(8rem, 10vw);
+  --xl:  max(4rem, 5vw);
+  --l:   max(2rem, 2.5vw);
+  --m:   max(1rem, 1.25vw);
+  --s:   max(0.5rem, 0.75vw);
+  --xs:  max(0.25rem, 0.375vw);
+  --xxs: max(0.125rem, 0.1425vw);
+  --zero: 0px;
+
+  /* Padding for element types */
+  --padding-section: clamp(var(--m), 5vh, var(--xl)) max(var(--s), 5vw);
+  --padding-inline: var(--xs) var(--s);
+
+  --border-l: 4px solid currentcolor;
+  --border-m: 2px solid currentcolor;
+  --border-s: 1px solid currentcolor;
+
+  /* Width Units */
+  --maxwidth-xxl: 96rem;
+  --maxwidth-xl:  72rem;
+  --maxwidth-l:   45rem;
+  --maxwidth-m:   36rem;
+  --maxwidth-s:   27rem;
+  --maxwidth-xs:  18rem;
+  --maxwidth-xxs: 9rem;
+
+  --maxwidth-page: 72rem;
+
+  /* Time units */
+  --time-l: 0.4s;
+  --time-m: 0.2s;
+  --time-s: 0.1s;
+
+  /* Motion */
+  --transition-l: all 0.4s;
+  --transition-m: all 0.2s;
+  --transition-s: all 0.1s;
+  
+  /* Z Index */
+  --z-max: 999999px;
+  --z-5: 5;
+  --z-4: 4;
+  --z-3: 3;
+  --z-2: 2;
+  --z-1: 1;
+  --z-0: 0;
+}
+
+
+
+/* #=# FLEXBOX #=# */
+/* Generic flex classes*/
+.f-col, .f-row {
+  display: flex;
+  gap: var(--m);
+  flex-wrap: wrap;
+}
+
+.f-col {
+  flex-direction: column;
+}
+
+.f-row {
+  flex-direction: row;
+}
+
+/* 
+  Flex classes are labeled "f-[align-items]-[justify-content]" 
+  Some classes have shorthand, using the first letter of their respective keyword (f-start-start -> f-s-s)
+*/
+/* Align items "start" */
+.f-start-start,  .f-s-s { align-items: flex-start; justify-content: flex-start; }
+.f-start-center, .f-s-c { align-items: flex-start; justify-content: center; }
+.f-start-end,    .f-s-e { align-items: flex-start; justify-content: flex-end; }
+.f-start-between, .f-s-b { align-items: flex-start; justify-content: space-between; width: 100%;}
+.f-start-around { align-items: flex-start; justify-content: space-around; width: 100%;}
+.f-start-evenly { align-items: flex-start; justify-content: space-evenly; width: 100%;}
+
+/* Align items "center" */
+.f-center-start,   .f-c-s { align-items: center; justify-content: flex-start; }
+.f-center-center,  .f-c-c { align-items: center; justify-content: center; }
+.f-center-end,     .f-c-e { align-items: center; justify-content: flex-end; }
+.f-center-between, .f-c-b { align-items: center; justify-content: space-between; width: 100%;}
+.f-center-around  { align-items: center; justify-content: space-around; width: 100%;}
+.f-center-evenly  { align-items: center; justify-content: space-evenly; width: 100%;}
+
+/* Align items "end" */
+.f-end-start,   .f-e-s { align-items: flex-end; justify-content: flex-start; }
+.f-end-center,  .f-e-c { align-items: flex-end; justify-content: center; }
+.f-end-end,     .f-e-e { align-items: flex-end; justify-content: flex-end; }
+.f-end-between, .f-e-b { align-items: flex-end; justify-content: space-between; width: 100%;}
+.f-end-around  { align-items: flex-end; justify-content: space-around; width: 100%;}
+.f-end-evenly  { align-items: flex-end; justify-content: space-evenly; width: 100%;}
+
+/* Flex shorthand classes where[label] is applied to align-items and justify-content */
+.f-start, .f-s { align-items: start; justify-content: start; }
+.f-center, .f-c { align-items: center; justify-content: center; }
+.f-end, .f-e { align-items: end; justify-content: end; }
+
+/* Modifying classes */
+.f-nowrap {flex-wrap: nowrap}
+.f-wrap { flex-wrap: wrap;}
+
+/* #=# Gap utilities #=# */
+.gap-xxl, .g-xxl { gap: var(--xxl); }
+.gap-xl, .g-xl  { gap: var(--xl); }
+.gap-l, .g-l   { gap: var(--l); }
+.gap-m, .g-m   { gap: var(--m); }
+.gap-s, .g-s   { gap: var(--s); }
+.gap-xs, .g-xs  { gap: var(--xs); }
+.gap-xxs, .g-xxs { gap: var(--xxs); }
