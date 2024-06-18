@@ -4,10 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link src="./style.css" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
 </head>
 <body>
-  
+  <main>
+    <section>
+      <h1>Palindrome Checker</h1>
+      <form>
+        <div class="input-wrap">
+          <label for="palindrome">Enter a Phrase</label>
+          <input type="text" id="text-input" name="palindrome">
+        </div>
+        <button type="button" id="check-btn">Check</button>
+      </form>
+
+      <div class="results-box">
+        <p id="result">Enter a phrase above and click "Check" to see if it is a palindrome.</p>
+        <div>
+          <p id="original"></p>
+          <p id="reversed"></p>
+        </div>
+      </div>
+    </section>
+  </main>
   <script src="./script.js"></script>
 </body>
 </html>
